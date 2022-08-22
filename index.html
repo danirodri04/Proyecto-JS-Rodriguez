@@ -1,12 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://bootswatch.com/5/quartz/bootstrap.min.css">
+	<title>Proyecto JS</title>
+	<link rel="stylesheet" href="estilo.css">
 </head>
+
 <body>
- <script src="script.js"></script>
+	<div class="container">
+		<form id="formTareas">
+			<div class="mb-3">
+			  <label for="nombreTarea" class="form-label">Nombre tarea</label>
+			  <input type="text" class="form-control" id="nombreTarea" name="nombre"> 
+			</div>
+			<div class="mb-3">
+				<label for="descripcionTarea" class="form-label">Descripción tarea</label>
+				<input type="text" class="form-control" id="descripcionTarea" name="descripcion">
+			</div>
+			<button type="submit" class="btn btn-primary">Crear tarea</button>
+		  </form>
+	</div><br><br>
+
+	<div class="container">
+	  <button id="botonTareas" class="btn btn-dark">Mostrar tareas</button><br><br>
+	  <div  id= "divTareas" class="row"></div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.26/dist/sweetalert2.all.min.js"></script>
+<script src="script.js"></script>
+
 </html>
