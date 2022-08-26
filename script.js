@@ -56,13 +56,13 @@ botonTareas.addEventListener('click', () => {
         let botonCard = document.getElementById(`tarea${indice}`).lastElementChild.lastElementChild
         botonCard.addEventListener('click', () => {
           Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
+            title: 'Estas seguro?',
+            text: "No volveras a revertir esto!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
+            confirmButtonText: 'Si, borrar!'
           }).then((result) => {
             if (result.isConfirmed) {
             document.getElementById(`tarea${indice}`).remove()
@@ -70,8 +70,8 @@ botonTareas.addEventListener('click', () => {
             localStorage.setItem('tareas', JSON.stringify(tareas))
             console.log(`${tarea.nombre} Eliminada`)
               Swal.fire(
-                'Deleted!',
-                'Your file has been deleted.',
+                'Eliminada!',
+                'Tu tarea a sido borrada.',
                 'success'
               )
             }
