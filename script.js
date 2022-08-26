@@ -55,43 +55,28 @@ botonTareas.addEventListener('click', () => {
     arrayStorage.forEach((tarea, indice) => {
         let botonCard = document.getElementById(`tarea${indice}`).lastElementChild.lastElementChild
         botonCard.addEventListener('click', () => {
-            const swalWithBootstrapButtons = Swal.mixin({
-                customClass: {
-                  confirmButton: 'btn btn-success',
-                  cancelButton: 'btn btn-danger'
-                },
-                buttonsStyling: false
-              })
-              
-              swalWithBootstrapButtons.fire({
-                title: 'Estas seguro?',
-                text: "No volveras a ver esta tarea!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonText: 'Si, borrar',
-                cancelButtonText: 'No, cancelar',
-                reverseButtons: true
-              }).then((result) => {
-                if (result.isConfirmed) {
-                  swalWithBootstrapButtons.fire(
-                    'Borrada',
-                    'Tu tarea a sido borrada correctamente.',
-                    'success'
-                  )
-                } else if (
-                  result.dismiss === Swal.DismissReason.cancel
-                ) {
-                  swalWithBootstrapButtons.fire(
-                    'Cancelado',
-                    'Tu tarea se guardo :)',
-                    'error'
-                  )
-                }
-              })
+          Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
             document.getElementById(`tarea${indice}`).remove()
             tareas.splice(indice,1)
             localStorage.setItem('tareas', JSON.stringify(tareas))
             console.log(`${tarea.nombre} Eliminada`)
+              Swal.fire(
+                'Deleted!',
+                'Your file has been deleted.',
+                'success'
+              )
+            }
+          })
+            
         })
     })
 
